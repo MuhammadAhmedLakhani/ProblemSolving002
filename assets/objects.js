@@ -15,16 +15,20 @@ const student = {
 // 1:Print student.name and student["city"]. Then add a grade property,
 //  change age to 21, and delete city. Print the object after each change.
 
-console.log(student.name)
-console.log(student["city"])
-student.grade = "A";
-console.log(student)
-student["age"] = 21;
-console.log(student)
-delete student.city
-console.log(student)
+// console.log(student.name)
+// console.log(student["city"])
+// student.grade = "A";
+// console.log(student)
+// student["age"] = 21;
+// console.log(student)
+// delete student.city
+// console.log(student)
 
-
+// Predict the output, and then run it:
+ 
+   console.log(student.email);                           //undefined (as nokey found)
+   console.log(student.marks.history);                   //undefined  (as nokey found)
+   console.log(student.address.street);                  //error  (as undefined then undefined 2 times)                         
 
 
 
