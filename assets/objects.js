@@ -128,6 +128,27 @@
 // Then change copy.marks.math = 0 and print student.marks.math. Write down why it changed.
 
 
+// const student = {
+//   name: "Asha",
+//   age: 20,
+//   marks: { math: 82, science: 74, english: 91 },
+//   city: "Pune",
+// };
+
+
+// const copy = {...student}
+// copy.name = "Bilal"
+// console.log(student.name) /// Asha (because now both copy and student are seprate nootbooks)
+
+
+
+// Stretch (optional)
+
+// Add a method to the object: student.getAverage = function () { ... } that uses this.marks.
+//  Call it, then try const fn = student.getAverage; fn();
+//  and see what breaks. Just notice it for now, because we’ll return to this later.
+
+
 const student = {
   name: "Asha",
   age: 20,
@@ -135,14 +156,12 @@ const student = {
   city: "Pune",
 };
 
+student.getAverage = function () {
+  const [topSubject, topMark] = Object.entries(this.marks).reduce((high, elem) => elem[1] > high[1] ? elem : high)
+  return (topMark / Object.entries(this.marks).length).toFixed(1)
+}
 
-const copy = {...student}
-copy.name = "Bilal"
-console.log(student.name) /// Asha (because now both copy and student are seprate nootbooks)
+console.log("Average --->",student.getAverage())
 
-
-
-
-
-
-
+const fn = student.getAverage
+fn()
