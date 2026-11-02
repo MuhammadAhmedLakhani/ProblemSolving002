@@ -87,6 +87,47 @@
 // average = average.toFixed(2)
 // console.log(average)
 
+// const student = {
+//   name: "Asha",
+//   age: 20,
+//   marks: { math: 82, science: 74, english: 91 },
+//   city: "Pune",
+// };
+
+//6: Find the subject with the highest mark and print its name, not just the number.
+
+// let marks = student["marks"];
+
+// // getting marks Array
+
+// const marksArray = Object.entries(marks)
+
+// // getting highest
+
+// let highest = marksArray.reduce( (high,[sub,mark])=> {
+//      return mark > high? mark:high
+// },marksArray[0][1]);
+
+// // getting high object
+
+// let highObject = marksArray.find(elem => elem[1] === highest)
+// let highSubject = highObject[0]
+// console.log(highSubject)
+
+// Part C: References and copies (about 30 minutes)
+
+// Predict, then run:
+// javascript
+// const copy = student;
+// copy.name = "Ravi";
+// console.log(student.name);  // Ravi printed
+
+//it is beacause he copy variable is pointing to same object (same notebook) but different names
+
+// 8. Make a copy with { ...student } and change copy.name. Check that student.name is untouched. 
+// Then change copy.marks.math = 0 and print student.marks.math. Write down why it changed.
+
+
 const student = {
   name: "Asha",
   age: 20,
@@ -94,22 +135,14 @@ const student = {
   city: "Pune",
 };
 
-//6: Find the subject with the highest mark and print its name, not just the number.
 
-let marks = student["marks"];
+const copy = {...student}
+copy.name = "Bilal"
+console.log(student.name) /// Asha (because now both copy and student are seprate nootbooks)
 
-// getting marks Array
 
-const marksArray = Object.entries(marks)
 
-// getting highest
 
-let highest = marksArray.reduce( (high,[sub,mark])=> {
-     return mark > high? mark:high
-},marksArray[0][1]);
 
-// getting high object
 
-let highObject = marksArray.find(elem => elem[1] === highest)
-let highSubject = highObject[0]
-console.log(highSubject)
+
